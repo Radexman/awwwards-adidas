@@ -2,6 +2,7 @@
 
 :root {
   --background: #000000;
+  overflow-x: hidden;
 }
 
 body {
