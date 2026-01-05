@@ -30,11 +30,11 @@ const Scene = ({ shirtType }: SceneProps) => {
           <SecondModel shirtType={shirtType} />
         </View>
       </section>
-      <section id="third-section" className="h-screen">
+      {/* <section id="third-section" className="h-screen">
         <View className="h-dvh w-dvw">
           <ThirdModel shirtType={shirtType} />
         </View>
-      </section>
+      </section> */}
     </main>
   );
 };
