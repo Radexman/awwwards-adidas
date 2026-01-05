@@ -5,6 +5,7 @@ import { FirstWhiteModel } from './FirstWhiteModel';
 import { FirstGrayModel } from './FirstGrayModel';
 import { FirstSportsModel } from './FirstSportsModel';
 import { SecondModel } from './SecondModel';
+import { ThirdModel } from './ThirdModel';
 
 type SceneProps = {
   shirtType: ShirtType;
@@ -25,9 +26,11 @@ const Scene = ({ shirtType }: SceneProps) => {
           <SecondModel shirtType={shirtType} />
         </View>
       </section>
-      {/* <section id="third-section" className="h-screen">
-        <View className="h-dvh w-dvw"></View>
-      </section> */}
+      <section id="third-section" className="h-screen">
+        <View className="h-dvh w-dvw">
+          <ThirdModel shirtType={shirtType} />
+        </View>
+      </section>
     </main>
   );
 };
