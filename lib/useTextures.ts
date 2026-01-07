@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { useCubeTexture, useTexture, useVideoTexture } from '@react-three/drei';
+import { useTexture, useVideoTexture } from '@react-three/drei';
 
 import {
   SectionType,
@@ -8,6 +8,7 @@ import {
   environmentPaths,
   videoTextures,
 } from './textures';
+import { useMemo } from 'react';
 
 export const useMainStudioTextures = () => {
   return useModifiedTextures(studioTextures.main, true);
@@ -24,9 +25,15 @@ export const useShirtSectionTextures = (
 
 export const useShirtEnvCube = (shirtType: ShirtType) => {
   const path = environmentPaths[shirtType];
-  return useCubeTexture(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png'], {
-    path,
-  });
+
+  const env = useMemo(() => {
+    const tex = new THREE.CubeTextureLoader()
+      .setPath(path)
+      .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+    tex.colorSpace = THREE.SRGBColorSpace;
+    return tex;
+  }, [path]);
+  return env;
 };
 
 export const useShirtVideoTexure = (shirtType: ShirtType) => {
