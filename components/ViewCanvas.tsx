@@ -7,6 +7,7 @@ import { View } from '@react-three/drei';
 import Rig from './Rig';
 import { patchThreeLoadingManager } from '@/lib/patchThreeLoadingManager';
 import { LoadingSkeleton } from './LoadingSkeleton';
+import { AssetsPreload } from './AssetsPreload';
 
 patchThreeLoadingManager();
 
@@ -25,6 +26,7 @@ export const ViewCanvas = () => {
       eventPrefix="client"
       gl={{ stencil: true }}
     >
+      <AssetsPreload />
       <Suspense fallback={<LoadingSkeleton />}>
         <View.Port />
       </Suspense>

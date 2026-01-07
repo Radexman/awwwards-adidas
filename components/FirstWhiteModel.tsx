@@ -53,5 +53,3 @@ export function FirstWhiteModel() {
     </group>
   );
 }
-
-useGLTF.preload('/models/white/WhiteStudio.glb');
