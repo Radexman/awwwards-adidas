@@ -6,7 +6,7 @@ import { View } from '@react-three/drei';
 
 import Rig from './Rig';
 
-const ViewCanvas = () => {
+export const ViewCanvas = () => {
   const [eventSource, setEventSource] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -26,5 +26,3 @@ const ViewCanvas = () => {
     </Canvas>
   );
 };
-
-export default ViewCanvas;

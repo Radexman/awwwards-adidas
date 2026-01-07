@@ -25,16 +25,16 @@ const Scene = ({ shirtType }: SceneProps) => {
           {shirtType === 'sport' && <FirstSportsModel />}
         </View>
       </section>
+      <section id="third-section" className="absolute top-[500vh] left-0 h-screen">
+        <View className="h-dvh w-dvw">
+          <ThirdModel shirtType={shirtType} />
+        </View>
+      </section>
       <section id="second-section" className="absolute inset-0 -z-10 h-screen">
         <View className="h-dvh w-dvw">
           <SecondModel shirtType={shirtType} />
         </View>
       </section>
-      {/* <section id="third-section" className="h-screen">
-        <View className="h-dvh w-dvw">
-          <ThirdModel shirtType={shirtType} />
-        </View>
-      </section> */}
     </main>
   );
 };

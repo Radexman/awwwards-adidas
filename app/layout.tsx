@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import { Mulish } from 'next/font/google';
 
 import './globals.css';
-import ViewCanvas from '@/components/ViewCanvas';
+import { ViewCanvas } from '@/components/ViewCanvas';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 const mulish = Mulish({
   subsets: ['cyrillic'],
@@ -22,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${mulish.className} antialiased`}>
         <ViewCanvas />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
